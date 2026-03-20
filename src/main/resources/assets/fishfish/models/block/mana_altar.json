@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "fishfish:block/mana_altar_top",
+    "bottom": "fishfish:block/mana_altar_bottom",
+    "side": "fishfish:block/mana_altar_side"
+  }
+}

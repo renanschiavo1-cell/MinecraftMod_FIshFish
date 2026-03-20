@@ -1,0 +1,10 @@
+{
+  "type": "fishfish:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/fishing"
+    }
+  ],
+  "item": "fishfish:mana_scale"
+}

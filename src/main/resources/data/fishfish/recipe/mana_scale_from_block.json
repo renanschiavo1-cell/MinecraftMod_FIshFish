@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "fishfish:mana_block"
+    }
+  ],
+  "result": {
+    "id": "fishfish:mana_scale",
+    "count": 9
+  }
+}

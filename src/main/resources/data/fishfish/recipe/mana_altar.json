@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PPP",
+    "PMP",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "fishfish:mana_scale"
+    },
+    "P": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "result": {
+    "id": "fishfish:mana_altar",
+    "count": 1
+  }
+}

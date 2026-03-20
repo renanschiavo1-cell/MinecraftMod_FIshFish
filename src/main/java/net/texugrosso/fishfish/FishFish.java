@@ -1,5 +1,14 @@
 package net.texugrosso.fishfish;
 
+import net.texugrosso.fishfish.block.ModBlocks;
+import net.texugrosso.fishfish.block.entity.ModBlockEntities;
+import net.texugrosso.fishfish.entity.ModEntities;
+import net.texugrosso.fishfish.item.ModArmorMaterials;
+import net.texugrosso.fishfish.item.ModCreativeModTabs;
+import net.texugrosso.fishfish.item.Moditems;
+import net.texugrosso.fishfish.loot.ModLootModifiers;
+import net.texugrosso.fishfish.screen.ManaAltarScreen;
+import net.texugrosso.fishfish.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -53,19 +62,20 @@ public class FishFish {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+        ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        Moditems.register(modEventBus);
+        ModCreativeModTabs.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
+        ModArmorMaterials.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-
-    }
-
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
     }
 
@@ -83,6 +93,11 @@ public class FishFish {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+
+        @SubscribeEvent
+        static void registerScreens(net.neoforged.neoforge.client.event.RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.MANA_ALTAR_MENU.get(), ManaAltarScreen::new);
         }
     }
 }

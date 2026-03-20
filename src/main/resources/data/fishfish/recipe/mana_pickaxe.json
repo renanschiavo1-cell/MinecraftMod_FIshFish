@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "HHH",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "H": {
+      "item": "fishfish:hardened_mana_scale"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "fishfish:mana_pickaxe",
+    "count": 1
+  }
+}
